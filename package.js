@@ -1,6 +1,6 @@
 Package.describe({
-  name: 'velocity:html-reporter',
-  summary: 'Reactive Velocity test reports in your app.',
+  name: 'velocity:nightwatch-reporter',
+  summary: 'Nightwatch specific HTML reporter for Velocity.',
   version: '0.4.2',
   git: 'https://github.com/meteor-velocity/html-reporter.git',
   debugOnly: true
