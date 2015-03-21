@@ -1,11 +1,15 @@
 nightwatch-reporter
 ======================
 
-HTML reporter for Nightwatch using the [Velocity testing framework](http://velocity.meteor.com)
+Nightwatch specific HTML reporter for use with the [velocity](http://velocity.meteor.com):[nightwatch-framework](https://github.com/meteor-velocity/nightwatch-framework)
 
 #### Installation
 
 ````sh
 meteor add velocity:nightwatch-framework
-#meteor add velocity:nightwatch-reporter
+
+cd packages
+git clone https://github.com/awatson1978/nightwatch-reporter
+
+meteor add velocity:nightwatch-reporter
 ````
