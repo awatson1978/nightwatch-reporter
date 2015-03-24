@@ -1,5 +1,37 @@
+#overlayResizeGrip{
+  border: 2px solid #4a90e2;
+  background-color: #8abcef;
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  top: 0;
+  transition: right 0.25s ease-in-out;
+  z-index: 1000;
+  border-radius: 50%;
+  margin-right: -15px;
+  top: 50%;
+  opacity: .8;
+  cursor: pointer;
+  transition: right 0.25s ease-in-out;
+}
+.grip-visible{
+  right: 670px !important;
+}
+
+@media only screen and (max-width: 580px) {
+  #velocityOverlay{
+    width: 380px;
+  }
+  #showLogs{
+    visibility: hidden;
+  }
+  #showFiles{
+    visibility: hidden;
+  }
+}
+
 #velocityOverlay {
-  @import "velocity.less";
+  @import "../velocityWidget/velocityWidget.less";
 
   z-index: 9000;
 
@@ -12,10 +44,12 @@
   position: fixed;
   top: 0;
   right: -780px;
-  max-width: 580px;
+  //width: 580px;
   height:100vh;
-  padding:0 50px 0px;
-  border-left: @velocity-border;
+  //padding:0 50px 0px;
+  // padding-left: 50px;
+  // padding-right: 50px;
+  // border-left: @velocity-border;
   background: #fff;
   color: #222;
   font-family: @velocity-font;
@@ -23,7 +57,8 @@
   font-size: 14px;
   text-align:center;
   overflow-y: auto;
-  transition: right 0.25s ease-in-out;
+  overflow-x: hidden;
+  transition: all 0.25s ease-in-out;
 
   &.visible {
     right: 0;
@@ -85,12 +120,16 @@
     background: white;
     border: 20px solid @velocity-blue;
     border-radius: 100%;
-    position: relative;
+    position: absolute;
+    top: -60px;
+    right: -60px;
     font: @velocity-font;
     font-size: 50px;
     vertical-align: middle;
     text-align: center;
     color:white;
+    z-index: 100;
+    cursor: pointer;
 
     &:before {
       content:'';
@@ -219,9 +258,11 @@
   }
 
   .velocity-options {
+    cursor: pointer;
     margin:0 0 -40px;
     opacity:0;
     overflow: hidden;
+    white-space: nowrap;
     transition: margin 0.3s linear, opacity 0.3s ease-in-out, max-height 0.3s linear;
     &.visible {
       margin:20px 0 10px;
@@ -231,25 +272,28 @@
 
   .velocity-report {
     min-height:150px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
-  .velocity-section-header {
+  .velocity-suite-header {
     border-bottom: @velocity-border;
     min-height: 30px;
     margin:10px 0 40px;
     background:rgb(255,255,255);
+    text-align: center !important;
 
-    .velocity-section-name{
+    .velocity-suite-name{
       background:inherit;
-      color: #AAA;
       font-family: @velocity-font-light;
       font-weight:400;
       font-size: 20px;
       font-weight:100;
       letter-spacing:8px;
       position:relative;
-      top: 16px;
+      top: 20px;
       padding: 0 2px 0 10px;
+      color: black;
     }
   }
 
@@ -298,18 +342,34 @@
       background-size: 100%;
     }
   }
-  
-  .velocity-result-table {
+
+  .velocity-result-list {
     width:100%;
     text-align:left;
+    padding-bottom: 50px;
 
-    .velocity-test-name,
-    .velocity-test-time {
+    .velocity-test{
+      padding-top: 3px;
+      padding-bottom: 3px;
+      .passed{
+        color: green;
+        padding-right: 10px;
+      }
+      .failed{
+        color: red;
+        padding-right: 10px;
+      }
+    }
+
+    .velocity-test-name{
       letter-spacing:1px;
       padding: 5px 0;
+      white-space: nowrap;
+      text-align: left;
     }
     .velocity-test-time {
       text-align: right;
+      vertical-align: top;
       font-family: @velocity-font-mono;
       white-space: nowrap;
     }
@@ -380,41 +440,41 @@
     }
   }
 
-  .velocity-iframe {
-    display: none;
-
-    iframe {
-      width:100%;
-      margin-bottom: 50px;
-      min-height: 500px;
-      border:@velocity-border;
-    }
-  }
-  .velocity-iframe.visible {
-    display: block;
-  }
-
-  .velocity-table-box{
-    max-width: 100%;
-    overflow-x: auto;
-    margin:0 0 50px;
-  }
-
-  .velocity-table {
-    min-width: 100%;
-    background: rgb(240, 240, 240);
-    text-align: left;
-    border-collapse: collapse;
-    white-space: nowrap;
-    margin:0;
-    td, th {
-      border-bottom: solid 1px white;
-      padding:8px 10px;
-    }
-    th{
-      border-bottom: solid 2px rgb(180, 180, 180)
-    }
-  }
+  // .velocity-iframe {
+  //   display: none;
+  //
+  //   iframe {
+  //     width:100%;
+  //     margin-bottom: 50px;
+  //     min-height: 500px;
+  //     border:@velocity-border;
+  //   }
+  // }
+  // .velocity-iframe.visible {
+  //   display: block;
+  // }
+  //
+  // .velocity-table-box{
+  //   max-width: 100%;
+  //   overflow-x: auto;
+  //   margin:0 0 50px;
+  // }
+  //
+  // .velocity-table {
+  //   min-width: 100%;
+  //   background: rgb(240, 240, 240);
+  //   text-align: left;
+  //   border-collapse: collapse;
+  //   white-space: nowrap;
+  //   margin:0;
+  //   td, th {
+  //     border-bottom: solid 1px white;
+  //     padding:8px 10px;
+  //   }
+  //   th{
+  //     border-bottom: solid 2px rgb(180, 180, 180)
+  //   }
+  // }
 
   .velocity-icon-loading{
     display:block;
@@ -426,7 +486,10 @@
     -webkit-animation: @velocity-anim-throb;
             animation: @velocity-anim-throb;
   }
+
+
 }
+
 
 // TODO: tidy up.
 #velocityResetNotification {
@@ -459,4 +522,12 @@
 
 #velocity-status-widget {
   transition: right 0.25s ease-in-out;
+  .velocity-icon-status{
+    margin-left: 3px !important;
+  }
+}
+
+
+.no-lower-margin{
+  margin-bottom: 0px;
 }

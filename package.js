@@ -10,19 +10,23 @@ Package.onUse(function(api) {
   api.versionsFrom('METEOR@1.0');
   api.use('velocity:core@0.4.5', 'client');
 
-  api.use(['underscore', 'templating','amplify@1.0.0', 'less'], 'client');
+  api.use(['underscore', 'session', 'templating','amplify@1.0.0', 'less'], 'client');
 
-  api.addFiles('lib/reamplify.js', 'client');
+  api.addFiles('components/reamplify.js', 'client');
 
-  api.addFiles('lib/velocity.js', 'client');
-  api.addFiles('lib/client-report.html', 'client');
-  api.addFiles('lib/client-report.js', 'client');
-  api.addFiles('lib/client-report.less', 'client');
-  api.addFiles('lib/status-widget.less', 'client');
+  api.addFiles('components/velocityWidget/velocityWidget.html', 'client');
+  api.addFiles('components/velocityWidget/velocityWidget.js', 'client');
+  api.addFiles('components/velocityWidget/velocityWidget.less', 'client');
 
-  api.addFiles('lib/velocity_logo.svg');
-  api.addFiles('lib/velocity_cog.svg');
-  api.addFiles('lib/icon-time.png');
+  api.addFiles('components/velocityReports/velocityReports.html', 'client');
+  api.addFiles('components/velocityReports/velocityReports.js', 'client');
+  api.addFiles('components/velocityReports/velocityReports.less', 'client');
+
+  api.addFiles('components/status-widget.less', 'client');
+
+  api.addFiles('assets/velocity_logo.svg');
+  api.addFiles('assets/velocity_cog.svg');
+  api.addFiles('assets/icon-time.png');
 
   // api.export('reamplify', ['client']);
 });

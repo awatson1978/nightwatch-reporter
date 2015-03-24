@@ -32,3 +32,54 @@
     transform:scale(0.6)
   }
 }
+
+
+
+.panel-width-normal{
+  width: 580px;
+  border-left: solid 3px rgba(74, 144, 226, 0.5);
+}
+.panel-width-wide{
+  width: 80%;
+  border-left: solid 3px rgba(74, 144, 226, 0.5);
+}
+.panel-width-closed{
+  width: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-left: 0px;
+}
+
+.grip-location-normal{
+  right: 580px;
+}
+.grip-location-wide{
+  right: 80%;
+}
+.grip-location-closed{
+  right: -50px;
+}
+
+
+
+// #overlayResizeGrip{
+//   right: -780px;
+// }
+// .grip-visible{
+//   right: 670px !important;
+// }
+
+@media only screen and (max-width: 580px) {
+  #velocityOverlay{
+    width: 380px;
+  }
+  #showLogs{
+    visibility: hidden;
+  }
+  #showFiles{
+    visibility: hidden;
+  }
+}
+
+#velocityOverlay {
+}
