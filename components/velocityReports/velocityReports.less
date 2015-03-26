@@ -14,21 +14,10 @@
   cursor: pointer;
   transition: right 0.25s ease-in-out;
 }
-.grip-visible{
-  right: 670px !important;
-}
+// .grip-visible{
+//   right: 670px !important;
+// }
 
-@media only screen and (max-width: 580px) {
-  #velocityOverlay{
-    width: 380px;
-  }
-  #showLogs{
-    visibility: hidden;
-  }
-  #showFiles{
-    visibility: hidden;
-  }
-}
 
 #velocityOverlay {
   @import "../velocityWidget/velocityWidget.less";
@@ -115,14 +104,15 @@
 
   .velocity-icon-status{
     display:inline-block;
-    width: 100px;
-    height:100px;
+    width: 60px;
+    height: 60px;
     background: white;
-    border: 20px solid @velocity-blue;
+    border: 8px solid @velocity-blue;
     border-radius: 100%;
-    position: absolute;
-    top: -60px;
-    right: -60px;
+    position: fixed;
+    margin-left: 3px !important;
+    top: -18px;
+    right: -18px;
     font: @velocity-font;
     font-size: 50px;
     vertical-align: middle;
@@ -520,12 +510,14 @@
   }
 }
 
-#velocity-status-widget {
-  transition: right 0.25s ease-in-out;
-  .velocity-icon-status{
-    margin-left: 3px !important;
-  }
-}
+// #velocity-status-widget {
+//   transition: right 0.25s ease-in-out;
+//   .velocity-icon-status{
+//     width: 75px;
+//     height: 75px;
+//     margin-left: 3px !important;
+//   }
+// }
 
 
 .no-lower-margin{

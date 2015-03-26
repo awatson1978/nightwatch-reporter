@@ -90,25 +90,25 @@ Template.velocity.helpers({
     }
     return false;
   },
-  totalTime: function () {
-    var results = VelocityTestReports.find().fetch();
-
-    var firstTimeStamp, lastTimestamp, lastDuration;
-    _.each(results, function (result) {
-      if (!firstTimeStamp ||  firstTimeStamp > result.timestamp.getTime()) {
-        firstTimeStamp = result.timestamp.getTime();
-      }
-      if (!lastTimestamp ||  lastTimestamp < result.timestamp.getTime()) {
-        lastTimestamp = result.timestamp.getTime();
-        lastDuration = result.duration;
-      }
-    });
-    var ms = lastTimestamp + lastDuration - firstTimeStamp;
-
-    if (ms >= 1000) return Math.round(ms / 1000) + ' s';
-
-    return ms?ms:0 + ' ms';
-  },
+  // totalTime: function () {
+  //   var results = VelocityTestReports.find().fetch();
+  //
+  //   var firstTimeStamp, lastTimestamp, lastDuration;
+  //   _.each(results, function (result) {
+  //     if (!firstTimeStamp ||  firstTimeStamp > result.timestamp.getTime()) {
+  //       firstTimeStamp = result.timestamp.getTime();
+  //     }
+  //     if (!lastTimestamp ||  lastTimestamp < result.timestamp.getTime()) {
+  //       lastTimestamp = result.timestamp.getTime();
+  //       lastDuration = result.duration;
+  //     }
+  //   });
+  //   var ms = lastTimestamp + lastDuration - firstTimeStamp;
+  //
+  //   if (ms >= 1000) return Math.round(ms / 1000) + ' s';
+  //
+  //   return ms?ms:0 + ' ms';
+  // },
 
   totalFailedTestCount: function () {
     return VelocityTestReports.find({result: 'failed'}).count();

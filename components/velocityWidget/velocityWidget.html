@@ -21,7 +21,7 @@
         {{#if anyFailed}}
           {{totalFailedTestCount}} {{regularPlural totalFailedTestCount 'test' 's'}} failed
         {{else}}
-          {{totalPassedTestCount}} {{regularPlural totalPassedTestCount 'test' 's'}} passed in {{totalTime}}
+          {{totalPassedTestCount}} {{regularPlural totalPassedTestCount 'test' 's'}} passed
         {{/if}}
       </div>
 
@@ -64,9 +64,9 @@
   <div class="velocity-options visible">
     <button id="runNightwatchTests" class="btn-velocity">Run tests</button>
     <button id="showSuccessful" class="btn-velocity control-toggle {{showActive 'showSuccessful'}}">Passing tests</button>
+    <button id="resetAll" class="btn-velocity">Reset</button>
     <button id="showLogs" class="btn-velocity control-toggle {{showActive 'showLogs'}}">Logs</button>
     <button id="showFiles" class="btn-velocity control-toggle {{showActive 'showFiles'}}">Files</button>
-    <button id="resetAll" class="btn-velocity">Reset</button>
     <i class="velocity-icon-status display-toggle" data-target="velocityOverlay"></i>
 
   </div>

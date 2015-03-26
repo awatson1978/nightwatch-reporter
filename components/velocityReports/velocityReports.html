@@ -1,12 +1,5 @@
 <template name="velocityReports">
   <section class="velocity-report {{frameworkStatus}}">
-    <!-- <div class="velocity-section-header">
-      <span class="velocity-section-name gray">{{name}}</span>
-    </div> -->
-
-    <!-- {{#if isPassed frameworkStatus}}
-      <i class="velocity-icon-status display-toggle" data-target="velocityOverlay"></i>
-    {{/if}} -->
 
     {{#unless frameworkTotalTestCount}}
       {{#if noFrameworkFiles}}
@@ -42,9 +35,6 @@
                       <div class="velocity-suite-header">
                         <span class="velocity-suite-name darkgray">{{name}}</span>
                       </div>
-
-                      <!-- <hr class="no-lower-margin"><br>
-                      <span class="velocity-suite-name">Suite: {{name}}</span> -->
                     {{else}}
                       {{#if sectionBreak}}
                         <hr class="no-lower-margin">
@@ -74,11 +64,3 @@
     {{/each}}
   </section>
 </template>
-
-<!-- <template name="velocityTestReport">
-  {{#if reportNotHidden}}
-    <li class="velocity-test {{#if failed}}failed{{else}}passed{{/if}}">
-      {{#if failed}}<span class="failed">✖</span>{{else}}<span class="passed">✔</span>{{/if}}<span class="velocity-test-name">{{{name}}}</span>
-    </li>
-  {{/if}}
-</template> -->
